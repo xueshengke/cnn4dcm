@@ -1,4 +1,4 @@
-function test_example_CNN
+function mnist_cnn_example
 clear all;clc;
 addpath(genpath('DeepLearnToolbox'));
 load mnist_uint8;

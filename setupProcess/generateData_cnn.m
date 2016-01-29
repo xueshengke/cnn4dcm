@@ -1,12 +1,12 @@
 function [dataTrain, labelsTrain, dataTest, labelsTest] = generateData_cnn()
 %% data path
 path=cell(2,3);
-path{1,1}='/home/xueshengke/matlab/data128-c4/bz1';
-path{1,2}='/home/xueshengke/matlab/data128-c4/norm1';
-path{1,3}='/home/xueshengke/matlab/data128-c4/other1';
-path{2,1}='/home/xueshengke/matlab/data128-c4/bz2';
-path{2,2}='/home/xueshengke/matlab/data128-c4/norm2';
-path{2,3}='/home/xueshengke/matlab/data128-c4/other2';
+path{1,1}='E:\Matlab\data128-c4/bz1';
+path{1,2}='E:\Matlab\data128-c4/norm1';
+path{1,3}='E:\Matlab\data128-c4/other1';
+path{2,1}='E:\Matlab\data128-c4/bz2';
+path{2,2}='E:\Matlab\data128-c4/norm2';
+path{2,3}='E:\Matlab\data128-c4/other2';
 imgs=cell(size(path));
 for i=1:size(path,1)
     for j=1:size(path,2)

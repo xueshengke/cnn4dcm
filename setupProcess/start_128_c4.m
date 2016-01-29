@@ -1,5 +1,5 @@
 % new code for new data128-c4 applied in CNN  
-clear all; close all; clc;
+clear all;  clc;
 addpath(genpath('DeepLearnToolbox'));
 %% load data from jpg or file system
 width=128;
@@ -18,7 +18,7 @@ trainData=reshape(trainData, width, height, size(trainData, 2));
 testData=reshape(testData, width, height, size(testData, 2));
 trainNum = size(trainData, 3) ;
 testNum = size(testData, 3) ;
-%% CNN 设计
+%% CNN design
 rand('state',0)
 cnn.layers = {
     struct('type', 'i') 

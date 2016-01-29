@@ -1,9 +1,9 @@
-% net:  cnn 
+% net:   cnn 
 % x:     part of sample , patch
 function net = cnnff(net, x)
     n = numel(net.layers);
-    inputmaps = net.inputmaps;  % 50 to net.inputmaps
-    net.layers{1}.a{1} = x;             % should change ?
+    inputmaps = net.inputmaps;    % 50 to net.inputmaps
+    net.layers{1}.a{1} = x;       % should change ?
 
     for l = 2 : n   %  for each layer
         if strcmp(net.layers{l}.type, 'c')
@@ -37,8 +37,9 @@ function net = cnnff(net, x)
         sa = size(net.layers{n}.a{j});
         net.fv = [net.fv; reshape(net.layers{n}.a{j}, sa(1) * sa(2), sa(3))];
     end
-    %  feedforward into output perceptrons
+    % feedforward into output perceptrons
     % check the rows and columns of matrice are suitable
+    % activation of last layer
     net.o = sigm(net.ffW * net.fv + repmat(net.ffb, 1, size(net.fv, 2)));
 
 end

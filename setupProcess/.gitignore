@@ -1,7 +1,9 @@
 # ignore files except *.fig or *.m
 !\*.fig
 \*.m
+*.m~
 
+/DeepLearnToolbox/*.m~
 /DeepLearnToolbox/*.md
 /DeepLearnToolbox/*.sh
 /DeepLearnToolbox/LICENSE

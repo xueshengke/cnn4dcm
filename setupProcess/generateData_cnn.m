@@ -15,7 +15,7 @@ for i=1:size(path,1)
         for k=1:length(files)
             img=imread([path{i,j}, '/', files(k).name]);
             img=double(img);
-            img=img/max(max(img));      % normalize
+            img=img/max(max(img));        % normalize
             img=img(:)-mean(img(:));      % mean to zero
             imgs{i,j}.img(:,k)=img(:);
         end

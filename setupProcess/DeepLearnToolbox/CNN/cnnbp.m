@@ -1,5 +1,5 @@
 % net:  cnn
-% y:     labels according to data
+% y:    labels according to data
 function net = cnnbp(net, y)
     n = numel(net.layers);
     %   error
@@ -9,7 +9,7 @@ function net = cnnbp(net, y)
 
     %%  backprop deltas
     % delta of output layer
-    net.od = net.e .* (net.o .* (1 - net.o));   %  output delta
+    net.od = net.e .* (net.o .* (1 - net.o));   %  output delta of sigm
     net.fvd = (net.ffW' * net.od);              %  feature vector delta
     % gradient of current layer depends on convolutional layer or downsampling layer
     % in downsampling layer, activating function is linear

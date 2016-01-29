@@ -10,10 +10,12 @@ height=128;
 % load dcm/trainData;
 % load dcm/trainLabel;
 % end
-trainData = trainData - repmat(mean(trainData,2),1, size(trainData,2));
-trainData=reshape(trainData, width, height, size(trainData, 2));
- testData = testData - repmat(mean(testData,2),1, size(testData,2));
-testData=reshape(testData, width, height, size(testData, 2));
+% trainData = trainData - repmat(mean(trainData,2),1, size(trainData,2));
+trainData = reshape(trainData, width, height, size(trainData, 2));
+
+% testData = testData - repmat(mean(testData,2),1, size(testData,2));
+testData = reshape(testData, width, height, size(testData, 2));
+
 trainNum = size(trainData, 3) ;
 testNum = size(testData, 3) ;
 %% CNN 设计
@@ -51,6 +53,7 @@ fprintf('reluCnn training finished. \n');
 
 % load dcm/testData;
 % load dcm/testLabel;
+
 %% commence the cnn test
 fprintf('cnn test commences :\n');
 [ratio, er, bad] = relucnntest(cnn, testData, testLabel);
